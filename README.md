@@ -1,87 +1,135 @@
-# Bash Scripting — My Learning Journey
+# 🐚 My Bash Scripting Journey
 
-This repository documents a personal journey learning Bash scripting: goals, milestones, problems solved, examples, tools used, and next steps. It is written as a concise log to help track progress and share useful patterns.
+Welcome to my **Bash Scripting Journey** repository!  
+This project documents my progress in learning the fundamentals of Bash scripting — from basic arithmetic and file operations to conditionals and automation tasks like backups.  
 
-## Why Bash
-- Automate repetitive tasks
-- Learn a portable, ubiquitous shell language
-- Improve system administration and DevOps skills
-- Combine small tools into powerful pipelines
-
-## Learning milestones
-1. Basics
-    - Command line navigation, pipes, redirection
-    - Variables, quoting, command substitution
-2. Control flow
-    - if/else, case statements, for/while loops
-    - Test expressions and exit codes
-3. Functions and modular scripts
-    - Reusable functions, local variables, return values
-4. Robust scripting
-    - set -euo pipefail, careful quoting, error handling
-    - Defensive programming and input validation
-5. Debugging and testing
-    - set -x, shellcheck linting, unit tests with bats
-6. Real projects
-    - Small automation scripts, backups, deployment helpers, CI tasks
-
-## Typical patterns and snippets
-Basic safe header:
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
-IFS=$'\n\t'
-```
-
-Parse args (simple):
-```bash
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-     -f|--file) file="$2"; shift 2 ;;
-     -h|--help) echo "Usage..."; exit 0 ;;
-     *) echo "Unknown: $1"; exit 1 ;;
-  esac
-done
-```
-
-Check command availability:
-```bash
-command -v jq >/dev/null 2>&1 || { echo "jq is required"; exit 1; }
-```
-
-## Tools and resources
-- shellcheck — static analysis
-- bats-core — Bash automated testing
-- man bash, GNU coreutils docs
-- Online tutorials, official Bash manual, example repositories
-
-## Projects completed
-- Backup rotation script
-- Log rotation and compression helper
-- Simple CI helper for local builds
-- Small utilities: CSV to TSV converter, bulk file renamer
-
-## Lessons learned
-- Always quote variables
-- Prefer arrays over parsing whitespace
-- Fail fast with clear messages
-- Keep scripts small, single-responsibility
-- Use existing tools (awk/sed/jq) instead of reimplementing
-
-## Next goals
-- Add test coverage with bats for scripts
-- Publish a collection of reusable library functions
-- Learn POSIX sh portability trade-offs
-- Explore advanced error handling and traps
-
-## How to use this repo
-- Read individual scripts in the `scripts/` folder
-- Run linting: shellcheck scripts/*.sh
-- Run tests (if present): bats tests/
-
-## Contributing
-- Open issues for improvements or suggestions
-- Submit pull requests for new utilities or fixes
+Each script focuses on a specific concept, helping me strengthen my command-line and Linux automation skills.  
 
 ---
-This README is a concise log of progress and practical patterns. Update it as new lessons are learned.
+
+## 📘 Table of Contents
+1. [Overview](#overview)
+2. [Scripts](#scripts)
+   - [1. Basic Arithmetic](#1-basic-arithmetic)
+   - [2. File Operations](#2-file-operations)
+   - [3. Conditional Statements](#3-conditional-statements)
+   - [4. Backup Script](#4-backup-script)
+3. [How to Run](#how-to-run)
+4. [Skills Learned](#skills-learned)
+5. [Future Goals](#future-goals)
+
+---
+
+## 🧭 Overview
+
+These Bash scripts demonstrate:
+- Using user input and variables  
+- Performing arithmetic operations  
+- Automating file and directory handling  
+- Using conditional logic and file testing operators  
+- Implementing basic backup automation  
+
+All scripts are written to be **simple, readable, and beginner-friendly**.
+
+---
+
+## ⚙️ Scripts
+
+### 1. **Basic Arithmetic**
+**File:** `basic_arithmetic.sh`
+
+**Description:**  
+Prompts the user for two numbers, performs addition, subtraction, multiplication, and division, and displays all results in the terminal.
+
+**Concepts Used:**  
+- `read` for user input  
+- Arithmetic expansion `$(( ))`  
+- Echo for formatted output  
+
+---
+
+### 2. **File Operations**
+**File:** `file_operations.sh`
+
+**Description:**  
+Creates a directory, navigates into it, creates a file, writes text to it, and displays the file’s contents.
+
+**Concepts Used:**  
+- `mkdir`, `cd`, and `touch`  
+- File redirection (`>`)  
+- Command substitution and navigation  
+
+---
+
+### 3. **Conditional Statements**
+**File:** `file_check.sh`
+
+**Description:**  
+Checks if a file exists and prints an appropriate message.  
+If it exists, the script also verifies if it’s **readable**, **writable**, or **executable**.
+
+**Concepts Used:**  
+- Conditional expressions `[ -f ]`, `[ -r ]`, `[ -w ]`, `[ -x ]`  
+- If-else statements  
+- Logical operators  
+
+---
+
+### 4. **Backup Script**
+**File:** `backup_script.sh`
+
+**Description:**  
+Copies all `.txt` files from a specified directory to a backup directory.  
+If the backup directory does not exist, it will be created automatically.
+
+**Concepts Used:**  
+- Directory and file checking  
+- `cp` for copying files  
+- `mkdir -p` for safe directory creation  
+- Basic automation logic  
+
+---
+
+## 🚀 How to Run
+
+1. Clone or download this repository:
+   ```bash
+   git clone https://github.com/yourusername/bash-scripting-journey.git
+   cd bash-scripting-journey
+   ```
+
+2. Make any script executable:
+   ```bash
+   chmod +x script_name.sh
+   ```
+
+3. Run the script:
+   ```bash
+   ./script_name.sh
+   ```
+
+---
+
+## 🧠 Skills Learned
+
+- Shell basics and syntax  
+- Variable handling and arithmetic  
+- Working with files and directories  
+- Writing modular and readable Bash scripts  
+- Automating repetitive tasks  
+- Using conditional logic for error handling  
+
+---
+
+## 🎯 Future Goals
+
+- Implement loops and argument parsing  
+- Add logging and error management  
+- Create a menu-driven utility tool  
+- Learn about cron jobs for automation  
+
+---
+
+### ✍️ Author
+**Smile**  
+*Aspiring DevOps Engineer | Linux Enthusiast | Bash Learner*
