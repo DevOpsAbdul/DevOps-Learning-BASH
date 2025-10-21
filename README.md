@@ -132,5 +132,6 @@ If the backup directory does not exist, it will be created automatically.
 
 ### ✍️ Author
 
-*Abdul Hussein*
+*Abdul Hussein* |
 *Aspiring DevOps Engineer | Linux Enthusiast | Bash Learner*
+
