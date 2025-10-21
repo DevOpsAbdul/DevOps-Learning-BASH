@@ -1,6 +1,7 @@
 # 🐚 My Bash Scripting Journey
 
 Welcome to my **Bash Scripting Journey** repository!  
+
 This project documents my progress in learning the fundamentals of Bash scripting — from basic arithmetic and file operations to conditionals and automation tasks like backups.  
 
 Each script focuses on a specific concept, helping me strengthen my command-line and Linux automation skills.  
