@@ -4,25 +4,25 @@
 
 FILE="DevOps_project.txt"
 
-if [ -f "$FILE" ]; then
+if [ -f "$FILE" ]; then # Checks if the file exists
 
 echo "The file you are looking for exists."
 
-if [ -r "$FILE" ]; then
+if [ -r "$FILE" ]; then # Checks if the file is readable
     echo "The file is readable."
 fi
 
-if [ -w "$FILE" ]; then
+if [ -w "$FILE" ]; then # Checks if the file is writable
     echo "The file is writable."
 fi
 
-if [ -x "$FILE" ]; then
+if [ -x "$FILE" ]; then # Checks if the file is executable
     echo "The file is executable."
 fi
 
-if ! [ -r "$FILE" ] && ! [ -w "$FILE" ] && ! [ -x "$FILE" ]; then
+if ! [ -r "$FILE" ] && ! [ -w "$FILE" ] && ! [ -x "$FILE" ]; then # Checks if the file has no permissions
     echo "The file has no read, write or execute permissions."
 fi
-else
+else # If the file does not exist
     echo "The file you are looking for does not exist."
 fi

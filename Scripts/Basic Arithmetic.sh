@@ -4,6 +4,7 @@
 
 echo "Enter first number:"
 read num1 #Takes the input from the user for the first number
+
 echo "Enter second number:"
 read num2 #Takes the input from the user for the second number
 
